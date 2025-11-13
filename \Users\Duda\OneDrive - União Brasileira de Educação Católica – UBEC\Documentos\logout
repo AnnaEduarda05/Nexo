@@ -1,0 +1,244 @@
+"use client";
+import React from "react";
+import { Home, User, FileText, LogOut } from "lucide-react";
+import * as Icons from "lucide-react";
+
+export default function LogoutPage() {
+  const handleAcao = () => {
+    console.log("Ação de navegação desativada, pois o ambiente não é Next.js.");
+  };
+
+  return (
+    <div
+      style={{
+        backgroundColor: "#e5e5e5",
+        height: "100vh",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        fontFamily: "'Poppins', sans-serif",
+      }}
+    >
+      <div
+        style={{
+          backgroundColor: "#fff",
+          padding: "80px 100px",
+          borderRadius: "8px",
+          boxShadow: "0 0 10px rgba(0,0,0,0.1)",
+          width: "1600px",
+          minHeight: "750px",
+          display: "flex",
+          flexDirection: "row",
+          textAlign: "center",
+          position: "relative",
+          gap: "60px",
+        }}
+      >
+        <div
+          style={{
+            position: "absolute",
+            top: "40px",
+            left: "40px",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "flex-start",
+            gap: "35px",
+          }}
+        >
+          <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+            <Icons.Home size={22} color="#000" />
+            <span style={{ fontWeight: 700, color: "#000" }}>Home</span>
+          </div>
+
+          <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+            <Icons.User size={22} color="#000" />
+            <span style={{ fontWeight: 700, color: "#000" }}>Perfil</span>
+          </div>
+
+          <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+            <Icons.FileText size={22} color="#000" />
+            <span style={{ fontWeight: 700, color: "#000" }}>Sobre Nós</span>
+          </div>
+        </div>
+
+        <button
+          onClick={handleAcao}
+          style={{
+            position: "absolute",
+            top: "40px",
+            right: "40px",
+            backgroundColor: "#facc15",
+            border: "none",
+            color: "#000",
+            fontWeight: "700",
+            borderRadius: "8px",
+            padding: "10px 20px",
+            cursor: "pointer",
+            fontSize: "14px",
+          }}
+        >
+          Voltar
+        </button>
+
+        <div
+          style={{
+            flex: 1,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <div
+            style={{
+              marginBottom: "30px",
+              textAlign: "center",
+              position: "relative",
+            }}
+          >
+            <img
+              src="/logo.png.jpg"
+              alt="Logo NEXO"
+              style={{
+                width: "255px",
+                height: "auto",
+                marginBottom: "20px",
+              }}
+            />
+          </div>
+
+          <div
+            style={{
+              backgroundColor: "#facc15",
+              borderRadius: "50%",
+              width: "100px",
+              height: "100px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              marginBottom: "20px",
+            }}
+          >
+            <Icons.LogOut size={50} color="#000" />
+          </div>
+
+          <h2
+            style={{
+              fontSize: "32px",
+              color: "#facc15",
+              fontWeight: "700",
+              marginBottom: "10px",
+            }}
+          >
+            Log out
+          </h2>
+
+          <p
+            style={{
+              color: "#000",
+              fontWeight: "600",
+              fontSize: "16px",
+              marginBottom: "30px",
+            }}
+          >
+            Deseja realmente encerrar sua sessão?
+          </p>
+
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              gap: "12px",
+              width: "100%",
+              maxWidth: "300px",
+            }}
+          >
+            <button
+              onClick={handleAcao}
+              style={{
+                backgroundColor: "#facc15",
+                border: "none",
+                color: "#000",
+                fontWeight: "700",
+                borderRadius: "6px",
+                width: "100%",
+                padding: "14px",
+                cursor: "pointer",
+                fontSize: "16px",
+              }}
+            >
+              Encerrar
+            </button>
+
+            <button
+              onClick={handleAcao}
+              style={{
+                backgroundColor: "#e5e5e5",
+                border: "none",
+                color: "#000",
+                fontWeight: "700",
+                borderRadius: "6px",
+                width: "100%",
+                padding: "14px",
+                cursor: "pointer",
+                fontSize: "16px",
+              }}
+            >
+              Voltar
+            </button>
+
+            <span
+              style={{
+                color: "#000",
+                fontWeight: "600",
+                fontSize: "14px",
+                margin: "8px 0",
+              }}
+            >
+              ou
+            </span>
+
+            <button
+              onClick={handleAcao}
+              style={{
+                backgroundColor: "#facc15",
+                border: "none",
+                color: "#000",
+                fontWeight: "700",
+                borderRadius: "6px",
+                width: "100%",
+                padding: "14px",
+                cursor: "pointer",
+                fontSize: "16px",
+              }}
+            >
+              Trocar de conta
+            </button>
+          </div>
+
+          <div
+            style={{
+              position: "absolute",
+              bottom: "30px",
+              textAlign: "center",
+              width: "100%",
+            }}
+          >
+            <p
+              style={{
+                fontSize: "12px",
+                color: "#000",
+                fontWeight: "700",
+              }}
+            >
+              © 2025 Nexo. Todos os direitos reservados.
+              <br />
+              Produtividade e organização em um só lugar.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
