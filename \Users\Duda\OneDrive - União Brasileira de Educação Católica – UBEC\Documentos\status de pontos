@@ -1,0 +1,231 @@
+"use client";
+import React from "react";
+import * as Icons from "lucide-react";
+
+export default function StatusPontosPage() {
+  const handleAcao = () => {
+    console.log("Ação desativada (ambiente não Next.js)");
+  };
+
+  const dados = [
+    {
+      data: "10/11/2024",
+      entrada: "08:00",
+      saida: "17:00",
+      status: "Ponto batido",
+      cor: "#16a34a",
+      just: "–",
+    },
+    {
+      data: "09/11/2024",
+      entrada: "08:00",
+      saida: "17:00",
+      status: "Ponto batido",
+      cor: "#16a34a",
+      just: "–",
+    },
+    {
+      data: "08/11/2024",
+      entrada: "08:00",
+      saida: "17:00",
+      status: "Ponto batido",
+      cor: "#16a34a",
+      just: "–",
+    },
+    {
+      data: "07/11/2024",
+      entrada: "09:30",
+      saida: "17:00",
+      status: "Atraso",
+      cor: "#ea580c",
+      just: "Trânsito intenso",
+    },
+    {
+      data: "06/11/2024",
+      entrada: "08:00",
+      saida: "17:00",
+      status: "Ponto batido",
+      cor: "#16a34a",
+      just: "–",
+    },
+    {
+      data: "05/11/2024",
+      entrada: "–",
+      saida: "17:00",
+      status: "Pendente",
+      cor: "#dc2626",
+      just: "Esqueceu a entrada",
+    },
+    {
+      data: "04/11/2024",
+      entrada: "08:00",
+      saida: "17:00",
+      status: "Ponto batido",
+      cor: "#16a34a",
+      just: "–",
+    },
+    {
+      data: "03/11/2024",
+      entrada: "10:00",
+      saida: "17:00",
+      status: "Atraso",
+      cor: "#ea580c",
+      just: "Consulta médica",
+    },
+  ];
+
+  return (
+    <div
+      style={{
+        backgroundColor: "#e5e5e5",
+        minHeight: "100vh",
+        display: "flex",
+        justifyContent: "center",
+        padding: "40px",
+        fontFamily: "'Poppins', sans-serif",
+      }}
+    >
+      <div
+        style={{
+          backgroundColor: "#fff",
+          width: "1800px",
+          minHeight: "900px",
+          borderRadius: "8px",
+          padding: "40px 60px",
+          position: "relative",
+        }}
+      >
+        <div
+          onClick={handleAcao}
+          style={{
+            position: "absolute",
+            top: "30px",
+            left: "30px",
+            cursor: "pointer",
+          }}
+        >
+          <Icons.Menu size={32} color="#000" />
+        </div>
+
+        <button
+          onClick={handleAcao}
+          style={{
+            position: "absolute",
+            top: "30px",
+            right: "30px",
+            backgroundColor: "#facc15",
+            border: "none",
+            fontWeight: 700,
+            padding: "10px 20px",
+            borderRadius: "20px",
+            cursor: "pointer",
+          }}
+        >
+          Voltar
+        </button>
+
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            marginTop: "20px",
+          }}
+        >
+          <img src="/logo.jpg" alt="Logo NEXO" style={{ width: "180px" }} />
+        </div>
+
+        <h2 style={{ fontSize: "32px", fontWeight: 700, marginTop: "40px" }}>
+          Status de Pontos
+        </h2>
+
+        <div
+          style={{
+            display: "flex",
+            gap: "20px",
+            marginTop: "20px",
+            width: "100%",
+            maxWidth: "900px",
+          }}
+        >
+          <input
+            type="text"
+            placeholder="Buscar por data ou nome"
+            style={{
+              flex: 1,
+              padding: "12px 16px",
+              borderRadius: "8px",
+              border: "1px solid #ccc",
+              fontSize: "14px",
+            }}
+          />
+          <button
+            onClick={handleAcao}
+            style={{
+              backgroundColor: "#facc15",
+              border: "none",
+              fontWeight: 700,
+              padding: "12px 30px",
+              borderRadius: "8px",
+              cursor: "pointer",
+            }}
+          >
+            Filtrar
+          </button>
+        </div>
+
+        <div
+          style={{
+            marginTop: "40px",
+            maxHeight: "450px",
+            overflowY: "auto",
+            paddingRight: "10px",
+          }}
+        >
+          <table
+            style={{
+              width: "100%",
+              borderCollapse: "collapse",
+              fontSize: "15px",
+            }}
+          >
+            <thead>
+              <tr style={{ textAlign: "left", borderBottom: "2px solid #ddd" }}>
+                <th style={{ padding: "10px" }}>Data</th>
+                <th style={{ padding: "10px" }}>Entrada</th>
+                <th style={{ padding: "10px" }}>Saída</th>
+                <th style={{ padding: "10px" }}>Status</th>
+                <th style={{ padding: "10px" }}>Justificativa</th>
+              </tr>
+            </thead>
+            <tbody>
+              {dados.map((item, index) => (
+                <tr key={index} style={{ borderBottom: "1px solid #eee" }}>
+                  <td style={{ padding: "10px" }}>{item.data}</td>
+                  <td style={{ padding: "10px" }}>{item.entrada}</td>
+                  <td style={{ padding: "10px" }}>{item.saida}</td>
+                  <td
+                    style={{
+                      padding: "10px",
+                      fontWeight: 700,
+                      color: item.cor,
+                    }}
+                  >
+                    {item.status}
+                  </td>
+                  <td style={{ padding: "10px" }}>{item.just}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <div style={{ width: "100%", textAlign: "center", marginTop: "40px" }}>
+          <p style={{ fontSize: "12px", fontWeight: 700 }}>
+            © 2025 Nexo. Todos os direitos reservados.
+            <br /> Produtividade e organização em um só lugar.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
